@@ -33,7 +33,7 @@ class mainController {
   }
   newSearch() {
     const $ctrl = this;
-    $ctrl.itunesService.getImages($ctrl.tags, $ctrl.page, $ctrl.pageSize).then(data => {
+    $ctrl.itunesService.getImages($ctrl.page, $ctrl.pageSize).then(data => {
       $ctrl.tracks = data.results;
       $ctrl.total = data.results.length;
       if ($ctrl.scope.$root.$$phase !== '$apply' && $ctrl.scope.$root.$$phase !== '$digest') {
