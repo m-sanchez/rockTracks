@@ -1,0 +1,60 @@
+
+<div class="fluid-container">
+  <div class="row">
+    <div class="col-md-12 ">
+      <div class="virtual-scroll-wrapper" >
+        <virtual-scroll  data-provider="$ctrl.tracks" on-select="$ctrl.selecttrack"
+                        ng-model="$ctrl.selected" load-function="$ctrl.loadMore" total-number="$ctrl.total"
+                        row-height="$ctrl.rowHeight" padding-height="97" page-size="50">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="single-track">
+                <div class="track-image-wrapper">
+                  <img class="track-image" ng-src="{{$parent.item[0].artworkUrl100 | image200}}" alt = "{{$parent.item[0].trackName}}">
+                </div>
+                <div class="track-info">
+                  <span>{{$parent.item[0].trackName}}</span>
+                  <span>{{$parent.item[0].artistName}}</span>
+                  <span>${{$parent.item[0].trackPrice}}</span>
+                  <button class="btn btn-block" ng-click="$ctrl.selectTrack($parent.item[0].trackId)">View</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="single-track">
+                <div class="track-image-wrapper">
+                  <img class="track-image" ng-src="{{$parent.item[1].artworkUrl100 | image200}}" alt =
+                          "{{$parent.item[1].trackName}}">
+                </div>
+                <div class="track-info">
+                  <span>{{$parent.item[1].trackName}}</span>
+                  <span>{{$parent.item[1].artistName}}</span>
+                  <span>${{$parent.item[1].trackPrice}}</span>
+                  <button class="btn btn-block" ng-click="$ctrl.selectTrack($parent.item[1].trackId)">View</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="single-track">
+                <div class="track-image-wrapper">
+                  <img class="track-image" ng-src="{{$parent.item[2].artworkUrl100 | image200}}" alt =
+                          "{{$parent.item[2].trackName}}">
+                </div>
+                <div class="track-info">
+                  <span>{{$parent.item[2].trackName}}</span>
+                  <span>{{$parent.item[2].artistName}}</span>
+                  <span>${{$parent.item[2].trackPrice}}</span>
+                  <button class="btn btn-block" ng-click="$ctrl.selectTrack($parent.item[2].trackId)">View</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </virtual-scroll>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

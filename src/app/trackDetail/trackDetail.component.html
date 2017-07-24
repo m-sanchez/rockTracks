@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="single-track details">
+        <div class="track-image-wrapper">
+          <img class="track-image detail" ng-src="{{$ctrl.track.artworkUrl100 | image350}}" alt =
+            "{{$ctrl.track.trackName}}">
+        </div>
+        <div class="track-info detail">
+          <span>{{$ctrl.track.trackName}}</span>
+          <span>{{$ctrl.track.artistName}}</span>
+          <span>{{$ctrl.track.trackTimeMillis | date:'mm:ss'}}</span>
+          <span>{{$ctrl.track.releaseDate | date}}</span>
+          <span>${{$ctrl.track.trackPrice }}</span>
+          <a class="btn btn-block" target="_blank" ng-href="{{$ctrl.track.trackViewUrl}}">More details</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="row">
+        <div class="col-md-12" ng-repeat="randomTrack in $ctrl.randomTracks track by $index">
+          <div class="single-track random">
+            <div class="track-image-wrapper">
+              <img class="track-image" ng-src="{{randomTrack.artworkUrl100 | image200}}" alt = "{{randomTrack.trackName}}">
+            </div>
+            <div class="track-info">
+              <span>{{randomTrack.trackName}}</span>
+              <span>{{randomTrack.artistName}}</span>
+              <span>${{randomTrack.trackPrice}}</span>
+              <button class="btn btn-block" ng-click="$ctrl.selectTrack(randomTrack.trackId)">View</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

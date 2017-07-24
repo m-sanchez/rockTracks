@@ -1,0 +1,20 @@
+<div id="virtualScrollShadow" class="vs-scroll-shadow"
+    ng-style="{'opacity' : $ctrl.scrollTop > 0 ? 1 : 0, 'width': $ctrl.parentElemWidth + 'px'}"></div>
+
+<div id="virtualScrollCanvasContainer" class="vs-scroll-container">
+    <div id="virtualScrollCanvas" class="canvas" ng-style="$ctrl.canvasHeight">
+        <div class="renderer"
+            id="uuid-{{item.uuid}}"
+            ng-repeat="item in $ctrl.visibleProvider"
+            ng-click="$ctrl.onClickOption(item)"
+            ng-style="item.styles">
+            <div ng-transclude></div>
+        </div>
+
+        <div class="renderer" ng-if="$ctrl.loadingElements"  ng-style="$ctrl.loadingStyle">
+
+              <p class="loading">Loading...</p>
+
+        </div>
+    </div>
+</div>
