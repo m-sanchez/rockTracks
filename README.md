@@ -10,6 +10,6 @@
 ### Test
   Run from the root of the project the following command:
    ` npm run test `   
-###Libraries used:
+### Libraries used:
   * AngularJs version 1.6: Javascript MVC Framework.
   * Bootstrap version 3 for general styling.
